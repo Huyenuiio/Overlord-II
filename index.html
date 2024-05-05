@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">	
+    <title>Overlord II</title>
+    <link rel="icon" href="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98437-5q0GWqHhNAgJ.jpg" type="jpg">
+    <style>
+        /* Your CSS styles go here */
+        * {
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+            text-transform: capitalize;
+            font-weight: normal;
+            font-family: 'Quicksand', sans-serif;
+        }
+        body {
+            background: #0f0f0f;
+            font-family: 'Quicksand', sans-serif;
+        }
+        .heading {
+            color: #728197;
+            font-size: 40px;
+            text-align: center;
+            padding: 10px;  
+            font-weight: 700;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 15px;
+            align-items: flex-start;
+            padding: 5px 5%;
+        }
+        .container .main-video {
+            background: #1a1a1a;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .container .main-video .video .iframe {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            height: 431px; 
+            border:none; 
+            
+        }
+        .container .main-video .title {
+            background: rgb(33 33 33);
+            color: rgb(255, 250, 250);
+            font-size: 23px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: 700;
+        }
+        .container .playlist {
+            background: rgb(33 33 33);
+            border-radius: 5px;
+            height: 520px;
+            overflow-y: scroll;
+        }
+        .container .playlist::-webkit-scrollbar {
+            width: 7px;
+        }
+        .container .playlist::-webkit-scrollbar-track {
+            background: #ccc;
+            border-radius: 50px; 
+        }
+        .container .playlist::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 50px; 
+        }
+        .container .playlist .vid {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0,0,0,.1);
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid rgba(0,0,0,.1);
+            cursor: pointer;
+        }
+        .container .playlist .vid:hover{
+            background: rgb(39 39 39);
+        }
+        .container .playlist .vid:hover .title{
+            color: #3db4d0;
+        }
+        .container .playlist .vid.active{
+            background: rgb(26 35 49);
+        }
+        .container .playlist .vid.active .title{
+            color: #5eead4;
+            font-weight: 700;
+        }
+        .container .playlist .vid .title{
+            color: hsla(0,0%,100%,.5);
+            font-size: 17px;
+        }
+        @media (max-width:991px){   
+            .container {
+                grid-template-columns: 1.5fr 1fr;
+                padding: 10px;
+            }
+        }
+        @media (max-width:768px){
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+        .container .playlist .vid img{
+    width: 100px;
+    border-radius: 5px;
+}
+
+
+ .playlist .vid iframe{
+    display: none;
+ }
+/* ------------------------------------------------hieu-ung-chuyen-dong-luot-len-luot-xuong---------------------------------------------------------------------- */
+
+.container, .video-list, .heading {
+    /* Thời gian chuyển đổi */
+    transition: all 0.5s ease-in-out;
+}
+
+.container:hover, .video-list:hover, .heading:hover {
+    /* Hiệu ứng lướt lên */
+    transform: translateY(-10px);
+}
+
+.container:active, .video-list:active, .heading:active {
+    /* Hiệu ứng lướt xuống */
+    transform: translateY(10px);
+}
+/* _____________________________________________________________________________________________________________________________ */
+
+    </style>
+</head>
+<body>
+    <h3 class="heading">Overlord II</h3>
+    <div class="container">
+        <div class="main-video">
+            <div class="video">
+                <iframe class="iframe" id="mainVideo" src="https://short.ink/aZEN4w12Z" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe>
+                <h3 class="title" id="mainTitle">Tập 1 - Bình minh của tuyệt vọng</h3>
+            </div>
+        </div>
+
+        <div class="playlist">
+            <!-- Thêm các video vào playlist ở đây -->
+            <div class="vid active " data-src="https://short.ink/aZEN4w12Z" data-title="Tập 1 - Bình minh của tuyệt vọng">
+                <iframe src="https://short.ink/aZEN4w12Z" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/BqR6VPzZBjHyaKq/6Q11Ao4paQU9zao.jpg" alt="poster">
+
+                <h3 class="title">Tập 1 - Bình minh của tuyệt vọng</h3>
+               
+            </div>
+            <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/6rcMcD0yT" data-title="Tập 2 - Khởi hành">
+                <iframe src="https://short.ink/6rcMcD0yT" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/jj0wDo8jr7UzBA8/QKox42kAqaT0Mjr.jpg" alt="poster">
+
+                <h3 class="title">Tập 2 - Khởi hành</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/cJyoGxHck" data-title="Tập 3 - Sức mạnh tộc Lizard">
+                <iframe src="https://short.ink/cJyoGxHck" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/X1B2qB4ZvvIDyj2/YPl8pzqDBqFv7bK.jpg" alt="poster">
+
+                <h3 class="title">Tập 3 - Sức mạnh tộc Lizard</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/Q1dNYympr" data-title="Tập 4 - Đội quân tử thần">
+                <iframe src="https://short.ink/Q1dNYympr" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/wZRm7bod8GfJkV9/0Dl0LMPGG3Sbq7y.jpg" alt="poster">
+
+                <h3 class="title">Tập 4 - Đội quân tử thần</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/US2S3Gxvn" data-title="Tập 5 - Vị thần băng giá">
+                <iframe src="https://short.ink/US2S3Gxvn" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/l0rL3xvlmpI7MAk/GQ7wGrVZz0cYm7.jpg" alt="poster">
+
+                <h3 class="title">Tập 5 - Vị thần băng giá</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/U8SAxCPg9" data-title="Tập 6 - Một tiếng khóc kêu cứu không thành lời">
+                <iframe src="https://short.ink/U8SAxCPg9" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/A3MLerjZQaF4GQ/6aYmPApLzziowv.jpg" alt="poster">
+
+                <h3 class="title">Tập 6 - Một tiếng khóc kêu cứu không thành lời</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/yV8iEjo11" data-title="Tập 7 - Blue Roses">
+                <iframe src="https://short.ink/yV8iEjo11" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/8DXO0eoabDc81M/Bk2mK4RrKAIKpK.jpg" alt="poster">
+
+                <h3 class="title">Tập 7 - Blue Roses</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/4jsMPj8Ti" data-title="Tập 8 - Cảm xúc của người đàn ông">
+                <iframe src="https://short.ink/4jsMPj8Ti" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/PyllZMDMP1T0jvA/9y1wdl1vg6uygq.jpg" alt="poster">
+
+                <h3 class="title">Tập 8 - Cảm xúc của người đàn ông</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/_ffrWGvL_" data-title="Tập 9 - Những tia lửa bốc lên">
+                <iframe src="https://short.ink/_ffrWGvL_" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/dA0pk9j84VfkrmJ/J39ayrJPjoIjKjA.jpg" alt="poster">
+
+                <h3 class="title">Tập 9 - Những tia lửa bốc lên</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/D0g_bm9VL" data-title="Tập 10 - Những lộn xộn ở thủ đô hoàng gia">
+                <iframe src="https://short.ink/D0g_bm9VL" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/OPkKGa3b4oH74d/4oPk46azORcKb6k.jpg" alt="poster">
+
+                <h3 class="title">Tập 10 - Những lộn xộn ở thủ đô hoàng gia</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/mVSx8nQY3" data-title="Tập 11 - Jaldabaoth">
+                <iframe src="https://short.ink/mVSx8nQY3" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/yVY9wx0kplc1AkD/0B11pZ6jYwcKy8.jpg" alt="poster">
+
+                <h3 class="title">Tập 11 - Jaldabaoth</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/MCghmhRs1" data-title="Tập 12 - Trận chiến cuối cùng">
+                <iframe src="https://short.ink/MCghmhRs1" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/qrKGAdr4ZWha7Q/KwGbJk8QO7U0GyA.jpg" alt="poster">
+
+                <h3 class="title">Tập 12 - Trận chiến cuối cùng</h3>
+               
+            </div>
+             <!-- Lặp lại quá trình này cho mỗi video trong playlist -->
+            <div class="vid active " data-src="https://short.ink/qLElIUWgHg" data-title="Tập 13 - Át chủ bài tối thượng">
+                <iframe src="https://short.ink/qLElIUWgHg" width="100" height="75" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" >
+                </iframe>
+                <img   style="filter: invert(0);"     src="https://thumb.tapecontent.net/thumb/94Av4wky6KtaM7Y/OaZ4JY1rKVsZOxp.jpg" alt="poster">
+
+                <h3 class="title">Tập 13 - Át chủ bài tối thượng</h3>
+               
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+       
+
+
+
+
+
+        </div>
+    </div>
+
+    <script>
+// Danh sách các video trong playlist
+var playlist = document.querySelectorAll('.playlist .vid');
+
+// Lặp qua từng video trong playlist
+for (let i = 0; i < playlist.length; i++) {
+    // Thêm sự kiện click cho mỗi video
+    playlist[i].addEventListener('click', function() {
+        // Xóa class 'active' khỏi tất cả các video
+        for (let j = 0; j < playlist.length; j++) {
+            playlist[j].classList.remove('active');
+        }
+
+        // Thêm class 'active' cho video được chọn
+        this.classList.add('active');
+
+        // Lấy src và tiêu đề của video được chọn
+        var selectedVideoSrc = this.dataset.src;
+        var selectedVideoTitle = this.dataset.title;
+
+        // Lưu src và tiêu đề của video được chọn vào localStorage
+        localStorage.setItem('selectedVideoSrc', selectedVideoSrc);
+        localStorage.setItem('selectedVideoTitle', selectedVideoTitle);
+
+        // Lấy iframe và tiêu đề hiện tại trong main-video
+        var currentVideo = document.querySelector('.main-video .video iframe');
+        var currentTitle = document.querySelector('.main-video .video .title');
+
+        // Thay thế src và tiêu đề của video hiện tại bằng src và tiêu đề của video được chọn
+        currentVideo.src = selectedVideoSrc;
+        currentTitle.innerText = selectedVideoTitle;
+    });
+}
+
+// Kích hoạt video đầu tiên hoặc video được chọn trước đó khi trang web được tải
+window.onload = function() {
+    var selectedVideoSrc = localStorage.getItem('selectedVideoSrc');
+    var selectedVideoTitle = localStorage.getItem('selectedVideoTitle');
+
+    if (selectedVideoSrc && selectedVideoTitle) {
+        // Nếu có video được chọn trước đó, chọn video đó
+        var selectedVideo = document.querySelector('.playlist .vid[data-src="' + selectedVideoSrc + '"]');
+        if (selectedVideo) {
+            selectedVideo.click();
+        }
+    } else {
+        // Nếu không có video được chọn trước đó, chọn video đầu tiên
+        var firstVideo = document.querySelector('.playlist .vid');
+        if (firstVideo) {
+            firstVideo.click();
+        }
+    }
+
+    // Kiểm tra xem người dùng đã nhìn thấy thông báo chưa
+    if (!localStorage.getItem('adblockPromptShown')) {
+        // Hiển thị thông báo cho người dùng
+        var userResponse = confirm("Chúng tôi khuyên bạn nên cài đặt tiện ích Adblock Plus để có trải nghiệm tốt nhất. Bạn có muốn cài đặt Adblock Plus không? Mỗi khi tải trang web bạn sẽ thấy các tập phim sáng lên, đó là lúc hàm javascript đang chạy để tìm lại tập phim mà bạn đã xem trước đó mất khoảng hơn 10s tuy vào độ dài của phim. Nếu là lần đầu bạn truy cập vào thì web sẽ chọn tập 1 cho bạn, hãy để hàm chạy rồi mới thao tác trên web nha. Nhấn ok cài đặt trình chặn quảng cáo, nhấn hủy để ủng hộ tôi <3");
+
+        // Nếu người dùng nhấn 'OK', chuyển hướng họ đến trang cài đặt của Adblock Plus
+        if (userResponse) {
+            window.location.href = "https://chrome.google.com/webstore/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb";
+        }
+
+        // Đánh dấu rằng người dùng đã nhìn thấy thông báo
+        localStorage.setItem('adblockPromptShown', 'true');
+    }
+};
+
+
+
+  
+
+
+    </script>
+</body>
+</html>
