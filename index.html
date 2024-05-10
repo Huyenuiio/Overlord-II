@@ -21,7 +21,27 @@
         body {
             background: #0f0f0f;
             font-family: 'Quicksand', sans-serif;
+              /* Thay đổi con trỏ chuột khi di chuyển */
+              cursor: url('https://github.com/Huyenuiio/Overlord-II/raw/main/cursor.cur'), auto;
         }
+        body:hover {
+    /* Thay đổi con trỏ chuột khi di chuyển lên một phần tử */
+    cursor: url('https://github.com/Huyenuiio/Overlord-II/raw/main/cursor.cur'), auto;
+}
+body:active {
+    /* Thay đổi con trỏ chuột khi nhấp chuột */
+    cursor: url('https://github.com/Huyenuiio/Overlord-II/raw/main/cursor.cur'), auto;
+}
+a:hover {
+    cursor: url('https://github.com/Huyenuiio/Overlord-II/raw/main/cursor.cur'), auto;
+}
+
+
+
+
+
+
+
         .heading {
             color: #728197;
             font-size: 40px;
@@ -40,6 +60,7 @@
             background: #1a1a1a;
             border-radius: 5px;
             padding: 10px;
+          
         }
         .container .main-video .video .iframe {
             width: 100%;
@@ -87,6 +108,7 @@
         }
         .container .playlist .vid:hover{
             background: rgb(39 39 39);
+            cursor: url('https://github.com/Huyenuiio/Overlord-II/raw/main/cursor.cur'), auto;
         }
         .container .playlist .vid:hover .title{
             color: #3db4d0;
@@ -106,16 +128,21 @@
             .container {
                 grid-template-columns: 1.5fr 1fr;
                 padding: 10px;
-            }
-        }
+            }}
         @media (max-width:768px){
             .container {
                 grid-template-columns: 1fr;
             }
         }
-
-
-
+        @media (max-width: 1540px){
+.media-page-unscoped .content .grid-wrap {
+    grid-template-columns: repeat(2, 1fr);
+}}
+@media (max-width: 1040px){
+.media-page-unscoped .content .grid-wrap {
+    grid-template-columns: repeat(1, 1fr);
+}
+}
         .container .playlist .vid img{
     width: 100px;
     border-radius: 5px;
@@ -143,11 +170,119 @@
 }
 /* _____________________________________________________________________________________________________________________________ */
 
+/* phần gird */
+.media-page-unscoped .content .grid-wrap {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.container .grid-wrap {
+
+
+     
+    display: grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 15px;
+    
+}
+
+
+
+
+
+.container h2 {
+    margin-bottom: 10px;
+}
+h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+h1, h2 {
+    color: #fffafa;
+    margin: 0;
+    padding: 0;
+}
+
+
+.media-preview-card[data-v-6dc78144] {
+    background: #9fadbd;
+    border-radius: 3px;
+    display: inline-grid;
+    grid-template-columns: 85px auto;
+    height: 115px;
+    max-height: 115px;
+}
+
+.cover[data-v-6dc78144] {
+background-position: 50%;
+background-repeat: no-repeat;
+background-size: cover;
+border-radius: 3px 0 0 3px;
+}
+a:visited {
+    color: inherit;
+}
+
+[lazy=error], [lazy=loaded] {
+    opacity: 1 !important;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    transition: .15s;
+    outline: 0;
+    background-color: transparent;
+}
+.cover .image-overlay[data-v-6dc78144], .cover .image-text[data-v-6dc78144] {
+    display: none;
+}
+/* trên là phần thẻ a */
+/* dưới là kế bên thẻ a */
+.content[data-v-6dc78144] {
+    background-color: rgb(33 33 33);
+    border-radius: 0 3px 3px 0;
+    padding: 12px;
+    position: relative;
+}
+
+.info-header[data-v-6dc78144]{
+    color: #3DB4F2;
+    /* font-size: 1.2rem; */
+    font-size: 14px;
+    font-weight: 500;
+    /* margin-bottom: 8px; */
+}
+/* tới phần title */
+
+.title[data-v-6dc78144] {
+    display: -webkit-box;
+    font-size: 1.4rem;
+    overflow: hidden;
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    color: #9fadbd;
+    font-weight: 700;
+    /* margin-bottom: 10px; */
+}
+
+.info[data-v-6dc78144] {
+    bottom: 12px;
+    /* color: rgb(133, 150, 165); */
+    color: #8596A5;
+    font-size: 1.2rem;
+    left: 12px;
+    position: absolute;
+}
+
+
     </style>
 </head>
 <body>
     <h3 class="heading">Overlord II</h3>
-    <div class="container">
+    <div class="container media-page-unscoped ">
         <div class="main-video">
             <div class="video">
                 <iframe class="iframe" id="mainVideo" src="https://short.ink/aZEN4w12Z" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0"></iframe>
@@ -275,21 +410,70 @@
             </div>
             
             
-            
-            
-            
-            
-            
-            
-            
-            
-       
+
+
+
+        </div>
+
+        <div class="relations">
+            <h2>Relations</h2> 
+        <div class="grid-wrap">
+<div     data-v-6dc78144           class="media-preview-card">
+            <a    data-v-6dc78144       class="cover"    data-src="https://huyenuiio.github.io/Overlord/"   lazy="loaded"        style="background-image: url(https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101474-tGRyvSAWMjU9.jpg);"   href="https://huyenuiio.github.io/Overlord/" >
+    
+           <div       data-v-6dc78144 class="image-text">
+            <div    data-v-4650c4e0 >Phần tiền truyện</div>
+           </div>
+           <!--  -->
+            </a>
+            <div data-v-6dc78144   class="content">
+                <div data-v-6dc78144 class="info-header">                       
+
+                        <div   data-v-4650c4e0   data-v-6dc78144 >Phần tiền truyện</div>
+                </div>
+                    <a data-v-6dc78144   href="https://huyenuiio.github.io/Overlord/"  class="title">Overlord</a>
+                <div data-v-6dc78144 class="info">TV · Hoàn thành</div>
+            </div>
+
+
+        </div>
+
+
+<!--  -->
+        <div     data-v-6dc78144           class="media-preview-card">
+            <a    data-v-6dc78144       class="cover"    data-src="https://huyenuiio.github.io/Overlord-III/"   lazy="loaded"        style="background-image: url(https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101474-tGRyvSAWMjU9.jpg);"  href="https://huyenuiio.github.io/Overlord-III/" >
+                
+           <div       data-v-6dc78144 class="image-text">
+            <div    data-v-4650c4e0 >Phần tiếp theo</div>
+           </div>
+           <!--  -->
+            </a>
+            <div data-v-6dc78144   class="content">
+                <div data-v-6dc78144 class="info-header">                       
+
+                        <div   data-v-4650c4e0   data-v-6dc78144 >Phần tiếp theo</div>
+                </div>
+                    <a data-v-6dc78144   href="https://huyenuiio.github.io/Overlord-III/"  class="title">Overlord III</a>
+                <div data-v-6dc78144 class="info">TV · Hoàn thành</div>
+            </div>
+
+
+        </div>
+
+<!--  -->
+
+
+
+
+
+
 
 
 
 
 
         </div>
+    </div>
     </div>
 
     <script>
